@@ -19,7 +19,7 @@ Let us now look at the bootom of the board.
 
 Now we start from the right, where we see the bottom of the ICSP header. Then there are SMD pads for an *optional* ***SQ-MIN-200*** or ***SQ-SEN-200*** vibration sensor. These are extremely sensitive, but also a bit expensive. Directly right to the pads are two through-hole pads that can be used for an alternative ***SW-18010*** vibration sensor, which is less expensive but also less sensitive.
 
-The resistor **R7** is the pull-up for the vibration switch. The SW-18010 is usually open, but the SQ-xxx-200 switche is usually closed. So, 3MΩ seems to be a good value, limiting the quiescent current to roughly 1 µA. The resistors **R2**-**R6** are current limiting resistors for the dot matrix display rows. **R1** (10kΩ) is the usual pullup for the reset line and **C1** (100nF) is the blocking capacitor for the MCU. 
+The resistor **R7** is the pull-up for the vibration switch. The SW-18010 is usually open, but the SQ-xxx-200 switch is usually closed. So, 3MΩ seems to be a good value, limiting the quiescent current to roughly 1 µA. The resistors **R2**-**R6** are current limiting resistors for the dot matrix display columns. **R1** (10kΩ) is the usual pullup for the reset line and **C1** (100nF) is the blocking capacitor for the MCU. 
 
 **R9** (10kΩ) is the pull-up for the MOSFET gate and **R8** (150Ω) is the current limiiting resistor for the MOSFET. These two are, of course only necessary if one uses the MOSFET.
 
@@ -29,23 +29,23 @@ Out of the 17 I/O lines of the ATtiny1634, 12 are used for the dot matrix displa
 | -------:| :------------| -----------:|:---------| -------:|
 | 1       |TX0/PB0/ADC5  |        A5/0 | TX/GPIO  |         |
 | 2       |RX0/PA7/PCINT7|        A4/1 | Vib/GPIO |         |
-| 3       | PA6          |           2 | Row 4    | 9       |
-| 4       | PA5          |           3 | Row 3    | 2       | 
-| 5       | PA4          |           4 | Row 2    | 11      |
-| 6       | PA3          |           5 | Row 1    | 12      |
+| 3       | PA6          |           2 | Row 7    | 6       |
+| 4       | PA5          |           3 | Row 6    | 5       | 
+| 5       | PA4          |           4 | Row 5    | 4       |
+| 6       | PA3          |           5 | Row 3    | 2       |
 | 7       | PA2          |           6 | Column 2 | 3       |
 | 8       | PA1          |           7 |Power/GPIO|         |
 | 9       | PA0          |           8 | Column 1 | 1       |
 | 10      | GND          |             | GND      |         |
 | 11      | Vcc          |             | Vcc      |         |
-| 12      | PC5          |           9 | Column 4 | 7       |
-| 13      | PC4          |          10 | Column 3 | 10      |
+| 12      | PC5          |           9 | Column 5 | 8       |
+| 13      | PC4          |          10 | Column 4 | 7       |
 | 14      | RESET        |             |          |         |
-| 15      | PC2          |          11 | Row 7    | 6       |
+| 15      | PC2          |          11 | Row 1    | 12      |
 | 16      | PC1/SCK/SCL  |       A10/12| ICSP/I2C/GPIO |    |
-| 17      | PC0          |          13 | Row 6    | 5       |
-| 18      | PB3          |          14 | Row 5    | 4       |
-| 19      | PB2/MISO     |          15 | ICSP/Column 5 | 8  |
+| 17      | PC0          |          13 | Row 2    | 11      |
+| 18      | PB3          |          14 | Row 4    | 9       |
+| 19      | PB2/MISO     |          15 | ICSP/Column 3 | 10 |
 | 20      | PB1/MOSI/SDA |       A6/16 | ICSP/I2C/GPIO |    |
 
 An include file for the current version of the board is **PETPreformBoard.h** in the *src* directory.
