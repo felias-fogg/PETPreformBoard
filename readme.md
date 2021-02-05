@@ -19,9 +19,11 @@ Let us now look at the bootom of the board.
 
 Now we start from the left, where we see the bottom of the ICSP header. Then there are SMD pads for an *optional* ***SQ-MIN-200*** or ***SQ-SEN-200*** vibration sensor. These are extremely sensitive, but also a bit expensive. Directly right to the pads are two through-hole pads that can be used for an alternative ***SW-18010*** vibration sensor, which is less expensive but also less sensitive.
 
-The resistor **R7** is the pull-up for the vibration switch. The SW-18010 is usually open, but the SQ-xxx-200 switch is usually closed. So, 3MΩ seems to be a good value, limiting the quiescent current to roughly 1 µA. The resistors **R2**-**R6** are current limiting resistors for the dot matrix display columns. **R1** (10kΩ) is the usual pullup for the reset line and **C1** (100nF) is the blocking capacitor for the MCU. 
+The resistor **R7** is the pull-up for the vibration switch. The SW-18010 is usually open, but the SQ-xxx-200 switch is usually closed. So, 3MΩ seems to be a good value, limiting the quiescent current to roughly 1.2 µA. Currently, I use 10MΩ, which still works fine and saves even more power. The resistors **R2**-**R6** are current limiting resistors for the dot matrix display columns. I have labled them with 470Ω, but you also can use 330Ω or a lower value. You get a brighter display, but consume more power.  **R1** (10kΩ) is the usual pullup for the reset line and **C1** (100nF) is the blocking capacitor for the MCU. 
 
-**R9** (10kΩ) is the pull-up for the MOSFET gate and **R8** (150Ω) is the current limiiting resistor for the MOSFET. These two are, of course only necessary if one uses the MOSFET.
+**R9** (10kΩ) is the pull-up for the MOSFET gate and **R8** (150Ω) is the current limiting resistor for the MOSFET. These two are, of course only necessary if one uses the MOSFET.
+
+If you want to drive the sensor directly drom the MCU pin, then **R8** should be 0Ω and you need to put another such bridge from the gate pad to the drain pad of the MOSFET.
 
 Out of the 17 I/O lines of the ATtiny1634, 12 are used for the dot matrix display, one line is used for the vibration switch, two lines are dedicated for I2C, but could be used for other pusposes, one line is intended to be used for switching the MOSFET, and one line can be used as a TX line for debug outputs or it can be used for any other purpose. The pin assignment is described in the following table.
 

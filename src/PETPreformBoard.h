@@ -27,7 +27,7 @@
 #define SDA_PORT PORTC
 #define SDA_PIN 4 // Arduino pin A4/18
 #define SDA 18
-#define SCL_PORT PORTCfon
+#define SCL_PORT PORTC
 #define SCL_PIN 5 // Arduino pin A5/19
 #define SCL 19
 #define POWER 14 // (A0)
@@ -74,9 +74,9 @@
 #undef DMCOL2
 #define DMCOL2 16
 #undef DMCOL3
-#define DMCOL5 6
+#define DMCOL3 6
 #undef SDA_PIN
-#define SDA_PIN 1
+#define SDA_PIN 2
 #undef SDA
 #define SDA 15
 #endif 
