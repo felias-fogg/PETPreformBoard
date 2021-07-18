@@ -1,8 +1,8 @@
 # The PET Preform Board
 
-The **PET Preform Board** board is a small PCB (67.8 x 15.6 mm) intended to be placed into a preform tube (with length of > 13cm) together with a 3.6 volt Lithium battery. On the board, you can place an ATtiny1634 and a dot matrix 5x7 display as well as some sensor breakout board (such as the popular GY boards). Meanwhile we have reached version *V4a* of the board design. In order to give an idea, here is a photo of an earlier version of this board in a preform tube.
+The **PET Preform Board** board is a small PCB (67.8 x 15.6 mm) intended to be placed into a preform tube (with length of > 13cm) together with a 3.6 volt Lithium battery. On the board, you can place an ATtiny1634 and a dot matrix 5x7 display as well as some sensor breakout board (such as the popular GY boards). Meanwhile we have reached version *V4a* of the board design. In order to give an idea, here is a photo of this board in a preform tube.
 
-![PETling photo](doc/PETPreformTube.png)
+![PETling photo](doc/PETtube.png)
 
 With an barometer, you can, for example, ask people to take the tube and carry it up to the summit of a hill. At the summit, the display then reavals a code. An example for this usage is for example the [geocache at Dagstuhl castle](https://coord.info/GC4XBM2).
 
@@ -23,7 +23,7 @@ The resistor **R7** is the pull-up for the vibration switch. The SW-18010 is usu
 
 **R9** (10kΩ) is the pull-up for the MOSFET gate and **R8** (150Ω) is the current limiting resistor for the MOSFET. These two are, of course only necessary if one uses the MOSFET.
 
-If you want to drive the sensor directly drom the MCU pin, then **R8** should be 0Ω and you need to put another such bridge from the gate pad to the drain pad of the MOSFET.
+If you want to drive the sensor directly from the MCU pin, then **R8** should be 0Ω and you need to put another such bridge from the gate pad to the drain pad of the MOSFET.
 
 Out of the 17 I/O lines of the ATtiny1634, 12 are used for the dot matrix display, one line is used for the vibration switch, two lines are dedicated for I2C, but could be used for other pusposes, one line is intended to be used for switching the MOSFET, and one line can be used as a TX line for debug outputs or it can be used for any other purpose. The pin assignment is described in the following table.
 
