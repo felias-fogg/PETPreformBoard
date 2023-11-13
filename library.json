@@ -1,15 +1,16 @@
 {
-  "name": "PETPreformBoard",
-  "keywords": "Signal Input/Output",
-  "description": "Pin definitions for PET peform tube board OPEN-V4A",
-  "repository":
-  {
-    "type": "git",
-    "url": "https://github.com/felias-fogg/PETPreformBoard.git"
-  },
-  "frameworks": "arduino",
-  "platforms":
-  [
-    "atmelavr",
-  ]
+    "name": "PETPreformBoard",
+    "version": "4.0.4",
+    "keywords": "Signal Input/Output",
+    "description": "Pin definitions for PET preform tube board OPEN-V4A",
+    "repository":
+    {
+	"type": "git",
+	"url": "https://github.com/felias-fogg/PETPreformBoard.git"
+    },
+    "frameworks": "arduino",
+    "platforms":
+    [
+	"atmelavr",
+    ]
 }
