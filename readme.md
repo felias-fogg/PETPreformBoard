@@ -4,17 +4,17 @@ The **PET Preform Board** board is a small PCB (67.8 x 15.6 mm) intended to be p
 
 ![PETling photo](doc/PETtube.png)
 
-With an barometer, you can, for example, ask people to take the tube and carry it up to the summit of a hill. At the summit, the display then reavals a code. An example for this usage is for example the [geocache at Dagstuhl castle](https://coord.info/GC4XBM2).
+With a barometer, you can, for example, ask people to take the tube and carry it up to the summit of a hill. At the summit, the display then reavals a code. An example for this usage is the [geocache at Dagstuhl castle](https://coord.info/GC4XBM2).
 
-You'll find the Eagle files in the subdirectory *doc/eagle* together with pictures of how the PCB looks like. Let us have a look of the top side.
+You'll find the Eagle files in the subdirectory *doc/eagle* together with pictures of how the PCB looks like. Let us now have a look at the top side.
 
 ![Top of PCB](doc/eagle/top.png)
 
-On the right side, there is an ICSP header that one can use for programmig. Close to the ICSP header on the top, there is a 2-pin header for a power jumper. Without the jumper, the battery is cut off from the board. Then comes left of the ICSP header the place for the dot matrix display **DS1**, e.g., ***TA07-11SEKWA***. It is adivsable to chose a hyper-orange or hyper-red type such as the mentioned one because we can spare only a few mill Amps to light the dots. Even further left is the space for **IC1**, the MCU ***ATtiny1634***. Both the dot matrix display and the MCU have their respective 1-pins at the bottom to the left, as marked with the "1".
+On the right side, there is an ICSP header that one can use for programmig. Close to the ICSP header on the top, there is a 2-pin header for a power jumper. Without the jumper, the battery is cut off from the board. Then comes left of the ICSP header the place for the dot matrix display **DS1**, e.g., ***TA07-11SEKWA***. It is adivsable to chose a hyper-orange or hyper-red type because we can spare only a few mill Amps to light the dots. Even further left is the space for **IC1**, the MCU ***ATtiny1634***. Both the dot matrix display and the MCU have their respective 1-pins at the bottom to the left, as marked with the "1".
 
-Left of the MCU, there is space for the *optional* resistor **R10** of 0Ω. Put that in if you want to connect the Vcc pin of a sensor directly with the battery. If you want to switch the power to the sensor, put in instead in the *optinonal* P-channel MOS-FET ***IRLML2244*** at the place marked Q1. 
+Left of the MCU, there is space for the *optional* resistor **R10** of 0Ω. Put that in if you want to connect the Vcc pin of a sensor directly to the battery. If you want to switch the power to the sensor, put instead the *optinonal* P-channel MOS-FET ***IRLML2244*** at the place marked Q1. 
 
-Let us now look at the bootom of the board.
+Let us now look at the bottom of the board.
 ![Bottom of PCB](doc/eagle/bottom.png)
 
 Now we start from the left, where we see the bottom of the ICSP header. Then there are SMD pads for an *optional* ***SQ-MIN-200*** or ***SQ-SEN-200*** vibration sensor. These are extremely sensitive, but also a bit expensive. Directly right to the pads are two through-hole pads that can be used for an alternative ***SW-18010*** vibration sensor, which is less expensive but also less sensitive.
@@ -50,4 +50,4 @@ Out of the 17 I/O lines of the ATtiny1634, 12 are used for the dot matrix displa
 | 19      | PB2/MISO     |          15 | ICSP/Column 3 | 10 |
 | 20      | PB1/MOSI/SDA |       A6/16 | ICSP/I2C/GPIO |    |
 
-An include file for the current version of the board is **PETPreformBoard.h** in the *src* directory.
+An include file for the current version of the board is **PETPreformBoard.h** in the *src* direct
