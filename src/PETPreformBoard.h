@@ -11,6 +11,8 @@
 #error "Illegal PETPreformBoard version number: " PPB_VERSION4
 #endif
 
+#define __AVR_ATtiny1634__ 1
+
 #if defined(__AVR_ATmega328P__)
 #define DMCOL1 2
 #define DMCOL2 3
